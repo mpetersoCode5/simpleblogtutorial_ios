@@ -14,6 +14,7 @@
 		B4B04CB51A54AEAE00DE079E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B04CB41A54AEAE00DE079E /* Images.xcassets */; };
 		B4B04CB81A54AEAE00DE079E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B04CB61A54AEAE00DE079E /* LaunchScreen.xib */; };
 		B4B04CC41A54AEAE00DE079E /* simpleblogtutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B04CC31A54AEAE00DE079E /* simpleblogtutorialTests.swift */; };
+		B4B04D2E1A54B74900DE079E /* simpleblogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B04D2D1A54B74900DE079E /* simpleblogAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		B4B04CBD1A54AEAE00DE079E /* simpleblogtutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleblogtutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B04CC21A54AEAE00DE079E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4B04CC31A54AEAE00DE079E /* simpleblogtutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleblogtutorialTests.swift; sourceTree = "<group>"; };
+		B4B04D2D1A54B74900DE079E /* simpleblogAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = simpleblogAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		B4B04CA71A54AEAE00DE079E /* simpleblogtutorial */ = {
 			isa = PBXGroup;
 			children = (
+				B4B04D2C1A54B6AF00DE079E /* model */,
 				B4B04CAA1A54AEAE00DE079E /* AppDelegate.swift */,
 				B4B04CAF1A54AEAE00DE079E /* ViewController.swift */,
 				B4B04CB11A54AEAE00DE079E /* Main.storyboard */,
@@ -113,6 +116,14 @@
 				B4B04CC21A54AEAE00DE079E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B4B04D2C1A54B6AF00DE079E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B4B04D2D1A54B74900DE079E /* simpleblogAPI.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 			files = (
 				B4B04CB01A54AEAE00DE079E /* ViewController.swift in Sources */,
 				B4B04CAB1A54AEAE00DE079E /* AppDelegate.swift in Sources */,
+				B4B04D2E1A54B74900DE079E /* simpleblogAPI.swift in Sources */,
 				B4B04CAE1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +424,7 @@
 				B4B04CC91A54AEAE00DE079E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4B04CCA1A54AEAE00DE079E /* Build configuration list for PBXNativeTarget "simpleblogtutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				B4B04CCC1A54AEAE00DE079E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
