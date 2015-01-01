@@ -9,7 +9,9 @@
 import UIKit
 
 protocol simpleblogAPIProtocol {
-    func didReceiveResponse(results: NSDictionary)
+//    func didReceiveResponse(results: NSDictionary)
+    func didReceiveResponse(results: NSArray)
+
 }
 
 class simpleblogAPI: NSObject {
@@ -19,7 +21,7 @@ class simpleblogAPI: NSObject {
     
     func setupConnection()
     {
-        var urlPath = "MichaelServer/simpleblogtutorial/index.php"
+        var urlPath = "MichaelServer.local/simpleblogtutorial/ios_backend/index.php"
         var url : NSURL = NSURL(string: urlPath)!
         var urlRequest : NSURLRequest = NSURLRequest(URL: url)
         var connection : NSURLConnection = NSURLConnection(request: urlRequest, delegate: self, startImmediately: false)!
@@ -49,9 +51,12 @@ class simpleblogAPI: NSObject {
     func connectionDidFinishLoading(connection : NSURLConnection!)
     {
         //Finished receiving data and convert it to a JSON object
-        var jsonResult : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+//        var jsonResult : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        var jsonResult : AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        let jsonArray = jsonResult as? NSArray
         
-        delegate?.didReceiveResponse(jsonResult)
+//        delegate?.didReceiveResponse(jsonResult)
+        delegate?.didReceiveResponse(jsonArray!)
     }
     
 }

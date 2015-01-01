@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EC879A64-2082-4CFF-B3BB-6C7F998F1618</string>
+	<key>IDESourceControlProjectName</key>
+	<string>simpleblogtutorial</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9C7472ECB30EEDC92669E9B6DB01ECC04E6FD145</key>
+		<string>MichaelServer.local:/Users/michaelpeterson1/Documents/simpleblogtutorial_ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>simpleblogtutorial.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9C7472ECB30EEDC92669E9B6DB01ECC04E6FD145</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>MichaelServer.local:/Users/michaelpeterson1/Documents/simpleblogtutorial_ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9C7472ECB30EEDC92669E9B6DB01ECC04E6FD145</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9C7472ECB30EEDC92669E9B6DB01ECC04E6FD145</string>
+			<key>IDESourceControlWCCName</key>
+			<string>simpleblogtutorial_ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
