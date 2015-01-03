@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, simpleblogAPIProtocol {
 
-    var api : simpleblogAPI = simpleblogAPI()
+    var learn : LearnNSURLSession = LearnNSURLSession()
+    var api : simpleblogAPI!
     
     @IBOutlet weak var textView: UITextView!
     
@@ -18,15 +19,17 @@ class ViewController: UIViewController, simpleblogAPIProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        api = simpleblogAPI(session: learn)
         api.delegate = self
+        learn.delegate = self
         api.setupConnection()
     }
 
     func didReceiveResponse(results: NSArray) {
         results.enumerateObjectsUsingBlock({ model, index, stop in
-            let postTitle = model["postTitle"] as String
-            let postDesc = model["postDesc"] as String
-            let postDate = model["postDate"] as String
+            let postTitle = model["postTitle"] as NSString
+            let postDesc = model["postDesc"] as NSString
+            let postDate = model["postDate"] as NSString
             self.textView.text = self.textView.text + NSString(format: "%@ \n %@ \n %@ \n", postTitle, postDesc, postDate);
         });
         
