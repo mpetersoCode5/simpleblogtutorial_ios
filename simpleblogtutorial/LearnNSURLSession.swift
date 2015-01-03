@@ -49,6 +49,15 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
             task.resume()
     }
     
+    func httpPost(request: NSMutableURLRequest!)
+    {
+        request.HTTPMethod = "POST"
+        var params = ["postTitle":"From IOS", "postDesc":"This is from an IOS device", "postCont":"This is from an IOS Device"] as Dictionary<String, String>
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+    }
+    
     func tempFunc(data: NSData)
     {
         if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSArray
