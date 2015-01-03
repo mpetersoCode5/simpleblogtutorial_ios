@@ -51,11 +51,26 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
     
     func httpPost(request: NSMutableURLRequest!)
     {
+        var configuration =
+        NSURLSessionConfiguration.defaultSessionConfiguration()
+        var session = NSURLSession(configuration: configuration,
+            delegate: self,
+            delegateQueue:NSOperationQueue.mainQueue())
+        
         request.HTTPMethod = "POST"
         var params = ["postTitle":"From IOS", "postDesc":"This is from an IOS device", "postCont":"This is from an IOS Device"] as Dictionary<String, String>
         request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        var task = session.dataTaskWithRequest(request){
+            (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+            if error != nil {
+                
+            } else {
+                var result = NSString(data: data, encoding:NSASCIIStringEncoding)!
+                println(result)
+            }
+        }
     }
     
     func tempFunc(data: NSData)
