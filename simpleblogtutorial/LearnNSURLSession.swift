@@ -49,7 +49,7 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
             task.resume()
     }
     
-    func httpPost(request: NSMutableURLRequest!)
+    func httpPost(request: NSMutableURLRequest!, body : NSString)
     {
         var configuration =
         NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -58,31 +58,33 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
             delegateQueue:NSOperationQueue.mainQueue())
         
         request.HTTPMethod = "POST"
-        var params = ["postTitle":"From IOS", "postDesc":"This is from an IOS device", "postCont":"This is from an IOS Device"] as Dictionary<String, String>
-        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        var trueBody = body.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        
+//        var postString : NSString = "postTitle=IOS&postDesc=IOS&postCont=IOS";
+        request.HTTPBody = trueBody.dataUsingEncoding(NSUTF8StringEncoding)
+        
+//        var params = ["postTitle":"From IOS", "postDesc":"This is from an IOS device", "postCont":"This is from an IOS Device"] as Dictionary<String, String>
+//        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Accept")
         var task = session.dataTaskWithRequest(request){
             (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
             if error != nil {
-                
+                println(error)
             } else {
                 var result = NSString(data: data, encoding:NSASCIIStringEncoding)!
                 println(result)
             }
         }
+        task.resume()
     }
     
     func tempFunc(data: NSData)
     {
         if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSArray
         {
-//            let jsonArray = jsonResult as? NSArray
             self.delegate?.didReceiveResponse(json)
         }
-//        var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-//        let jsonArray = jsonResult as? NSArray
-//        self.delegate?.didReceiveResponse(jsonArray!)
 
     }
     
@@ -98,15 +100,16 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
                     challenge.protectionSpace.serverTrust))
     }
     
+    func setupPost(body : NSString)
+    {
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/add-post.php")!)
+        httpPost(request, body : body)
+    }
+    
     func setupConnection()
     {
-        //        var learn = LearnNSURLSession()
-        var request = NSMutableURLRequest(URL: NSURL(string: "https://michaelserver.local:86/ios_backend/index.php")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/index.php")!)
         httpGet(request)
-        //        var str = learn.getResultString()
-        //        var jsonResult : AnyObject! = NSJSONSerialization.JSONObjectWithData(str, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-        //        let jsonArray = jsonResult as? NSArray
-        //       delegate?.didReceiveResponse(jsonArray!)
     }
     
     func getResultString() -> NSData

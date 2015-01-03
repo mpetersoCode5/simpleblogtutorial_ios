@@ -15,6 +15,7 @@
 		B4B04CB81A54AEAE00DE079E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B04CB61A54AEAE00DE079E /* LaunchScreen.xib */; };
 		B4B04CC41A54AEAE00DE079E /* simpleblogtutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B04CC31A54AEAE00DE079E /* simpleblogtutorialTests.swift */; };
 		B4C5253E1A575E1400CA9820 /* LearnNSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5253D1A575E1400CA9820 /* LearnNSURLSession.swift */; };
+		B4C525401A5840FE00CA9820 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5253F1A5840FE00CA9820 /* AddPostVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		B4B04CC21A54AEAE00DE079E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4B04CC31A54AEAE00DE079E /* simpleblogtutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleblogtutorialTests.swift; sourceTree = "<group>"; };
 		B4C5253D1A575E1400CA9820 /* LearnNSURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnNSURLSession.swift; sourceTree = "<group>"; };
+		B4C5253F1A5840FE00CA9820 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				B4B04CB61A54AEAE00DE079E /* LaunchScreen.xib */,
 				B4B04CAC1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld */,
 				B4B04CA81A54AEAE00DE079E /* Supporting Files */,
+				B4C5253F1A5840FE00CA9820 /* AddPostVC.swift */,
 			);
 			path = simpleblogtutorial;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				B4C5253E1A575E1400CA9820 /* LearnNSURLSession.swift in Sources */,
 				B4B04CB01A54AEAE00DE079E /* ViewController.swift in Sources */,
+				B4C525401A5840FE00CA9820 /* AddPostVC.swift in Sources */,
 				B4B04CAB1A54AEAE00DE079E /* AppDelegate.swift in Sources */,
 				B4B04CAE1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld in Sources */,
 			);

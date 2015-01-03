@@ -19,9 +19,13 @@ class ViewController: UIViewController, simpleblogAPIProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         learn.delegate = self
-        learn.setupConnection()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        textView.text = ""
+        learn.setupConnection()
+    }
+    
     func didReceiveResponse(results: NSArray) {
         results.enumerateObjectsUsingBlock({ model, index, stop in
             let postTitle = model["postTitle"] as NSString
@@ -37,6 +41,14 @@ class ViewController: UIViewController, simpleblogAPIProtocol {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddPost"
+        {
+            var addPost : AddPostVC = segue.destinationViewController as AddPostVC
+            addPost.learn = self.learn
+        }
+    }
+    
 
 }
 
