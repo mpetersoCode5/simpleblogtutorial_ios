@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol simpleblogAPIProtocol {
+    func didReceiveResponse(results: NSArray);
+}
+
 class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
     
     var delegate : simpleblogAPIProtocol!
@@ -68,6 +72,17 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
                 NSURLSessionAuthChallengeDisposition.UseCredential,
                 NSURLCredential(forTrust:
                     challenge.protectionSpace.serverTrust))
+    }
+    
+    func setupConnection()
+    {
+        //        var learn = LearnNSURLSession()
+        var request = NSMutableURLRequest(URL: NSURL(string: "https://michaelserver.local:86/ios_backend/index.php")!)
+        httpGet(request)
+        //        var str = learn.getResultString()
+        //        var jsonResult : AnyObject! = NSJSONSerialization.JSONObjectWithData(str, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        //        let jsonArray = jsonResult as? NSArray
+        //       delegate?.didReceiveResponse(jsonArray!)
     }
     
     func getResultString() -> NSData

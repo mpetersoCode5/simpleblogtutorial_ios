@@ -56,16 +56,7 @@ class simpleblogAPI: NSObject {
 //        self.data.appendData(data);
 //    }
     
-    func setupConnection()
-    {
-//        var learn = LearnNSURLSession()
-        var request = NSMutableURLRequest(URL: NSURL(string: "https://michaelserver.local:86/ios_backend/index.php")!)
-        learn.httpGet(request)
-//        var str = learn.getResultString()
-//        var jsonResult : AnyObject! = NSJSONSerialization.JSONObjectWithData(str, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-//        let jsonArray = jsonResult as? NSArray
-//       delegate?.didReceiveResponse(jsonArray!)
-    }
+    
     
     //NSUrlConnection Delegate Function
     func connectionDidFinishLoading(connection : NSURLConnection!)

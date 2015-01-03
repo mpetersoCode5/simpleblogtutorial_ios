@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, simpleblogAPIProtocol {
 
     var learn : LearnNSURLSession = LearnNSURLSession()
-    var api : simpleblogAPI!
     
     @IBOutlet weak var textView: UITextView!
     
@@ -19,10 +18,8 @@ class ViewController: UIViewController, simpleblogAPIProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        api = simpleblogAPI(session: learn)
-        api.delegate = self
         learn.delegate = self
-        api.setupConnection()
+        learn.setupConnection()
     }
 
     func didReceiveResponse(results: NSArray) {
