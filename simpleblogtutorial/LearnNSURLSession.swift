@@ -12,9 +12,14 @@ protocol simpleblogAPIProtocol {
     func didReceiveResponse(results: NSArray);
 }
 
+protocol simpleblogLoginAPIProtocol {
+    func didReceiveLoginResponse(result : NSString);
+}
+
 class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
     
     var delegate : simpleblogAPIProtocol!
+    var lDelegate : simpleblogLoginAPIProtocol!
     var str : NSData!
     
 //    typealias CallbackBlock = (result: String, error: String?) -> ()
@@ -47,6 +52,26 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
                 }
             }
             task.resume()
+    }
+    
+    func httpLogin(request: NSMutableURLRequest!)
+    {
+        var configuration =
+        NSURLSessionConfiguration.defaultSessionConfiguration()
+        var session = NSURLSession(configuration: configuration,
+            delegate: self,
+            delegateQueue:NSOperationQueue.mainQueue())
+        var task = session.dataTaskWithRequest(request) {
+            (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+            if error != nil
+            {
+                
+            } else {
+                var result = NSString(data: data, encoding: NSASCIIStringEncoding)!
+                self.login(result)
+            }
+        }
+        task.resume()
     }
     
     func httpPost(request: NSMutableURLRequest!, body : NSString)
@@ -88,6 +113,14 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
 
     }
     
+    func login(result : NSString)
+    {
+        if(result == "Success")
+        {
+            self.lDelegate?.didReceiveLoginResponse(result)
+        }
+    }
+    
     func URLSession(session: NSURLSession,
         didReceiveChallenge challenge:
         NSURLAuthenticationChallenge,
@@ -104,6 +137,13 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
     {
         var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/add-post.php")!)
         httpPost(request, body : body)
+    }
+    
+    func setupLogin(username: NSString, password: NSString)
+    {
+        var url : NSString = NSString(format: "http://michaelserver.local:86/ios_backend/Login.php?username=%@&password=%@", username, password)
+        var request = NSMutableURLRequest(URL: NSURL(string:url)!)
+        httpLogin(request)
     }
     
     func setupConnection()
