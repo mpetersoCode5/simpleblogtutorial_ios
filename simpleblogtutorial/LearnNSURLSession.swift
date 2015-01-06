@@ -87,11 +87,6 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
         
 //        var postString : NSString = "postTitle=IOS&postDesc=IOS&postCont=IOS";
         request.HTTPBody = trueBody.dataUsingEncoding(NSUTF8StringEncoding)
-        
-//        var params = ["postTitle":"From IOS", "postDesc":"This is from an IOS device", "postCont":"This is from an IOS Device"] as Dictionary<String, String>
-//        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: nil)
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.addValue("application/json", forHTTPHeaderField: "Accept")
         var task = session.dataTaskWithRequest(request){
             (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
             if error != nil {

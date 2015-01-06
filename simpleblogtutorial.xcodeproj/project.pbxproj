@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B465C3F41A59A426005EF1CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F31A59A426005EF1CB /* ViewController.swift */; };
+		B465C3F61A59A52F005EF1CB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F51A59A52F005EF1CB /* Post.swift */; };
 		B4B04CAB1A54AEAE00DE079E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B04CAA1A54AEAE00DE079E /* AppDelegate.swift */; };
 		B4B04CAE1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4B04CAC1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld */; };
-		B4B04CB01A54AEAE00DE079E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B04CAF1A54AEAE00DE079E /* ViewController.swift */; };
 		B4B04CB31A54AEAE00DE079E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B04CB11A54AEAE00DE079E /* Main.storyboard */; };
 		B4B04CB51A54AEAE00DE079E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B04CB41A54AEAE00DE079E /* Images.xcassets */; };
 		B4B04CB81A54AEAE00DE079E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B04CB61A54AEAE00DE079E /* LaunchScreen.xib */; };
@@ -30,11 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B465C3F31A59A426005EF1CB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B465C3F51A59A52F005EF1CB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B4B04CA51A54AEAE00DE079E /* simpleblogtutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleblogtutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B04CA91A54AEAE00DE079E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4B04CAA1A54AEAE00DE079E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B04CAD1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simpleblogtutorial.xcdatamodel; sourceTree = "<group>"; };
-		B4B04CAF1A54AEAE00DE079E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B4B04CB21A54AEAE00DE079E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4B04CB41A54AEAE00DE079E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B4B04CB71A54AEAE00DE079E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				B4C5253D1A575E1400CA9820 /* LearnNSURLSession.swift */,
+				B465C3F51A59A52F005EF1CB /* Post.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -133,9 +136,9 @@
 		B4C525411A58CABE00CA9820 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B465C3F31A59A426005EF1CB /* ViewController.swift */,
 				B4C36A531A58CE4A00590AD4 /* LoginVC.swift */,
 				B4C5253F1A5840FE00CA9820 /* AddPostVC.swift */,
-				B4B04CAF1A54AEAE00DE079E /* ViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -241,11 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B465C3F41A59A426005EF1CB /* ViewController.swift in Sources */,
 				B4C5253E1A575E1400CA9820 /* LearnNSURLSession.swift in Sources */,
-				B4B04CB01A54AEAE00DE079E /* ViewController.swift in Sources */,
 				B4C36A541A58CE4A00590AD4 /* LoginVC.swift in Sources */,
 				B4C525401A5840FE00CA9820 /* AddPostVC.swift in Sources */,
 				B4B04CAB1A54AEAE00DE079E /* AppDelegate.swift in Sources */,
+				B465C3F61A59A52F005EF1CB /* Post.swift in Sources */,
 				B4B04CAE1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

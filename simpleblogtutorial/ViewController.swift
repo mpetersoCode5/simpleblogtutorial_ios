@@ -8,31 +8,59 @@
 
 import UIKit
 
-class ViewController: UIViewController, simpleblogAPIProtocol {
+class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSource, UITableViewDelegate {
 
     var learn : LearnNSURLSession = LearnNSURLSession()
+    var posts : NSMutableArray = NSMutableArray()
     
-    @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         learn.delegate = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
     }
 
     override func viewWillAppear(animated: Bool) {
-        textView.text = ""
         learn.setupConnection()
     }
     
     func didReceiveResponse(results: NSArray) {
+        
+        posts.removeAllObjects()
+        
         results.enumerateObjectsUsingBlock({ model, index, stop in
             let postTitle = model["postTitle"] as NSString
             let postDesc = model["postDesc"] as NSString
+            let postCont = model["postCont"] as NSString
             let postDate = model["postDate"] as NSString
-            self.textView.text = self.textView.text + NSString(format: "%@ \n %@ \n %@ \n", postTitle, postDesc, postDate);
+            
+            var post = Post(pTitle: postTitle, pDesc: postDesc, pCont: postCont, pDate: postDate)
+            self.posts.addObject(post)
+            
+//            self.textView.text = self.textView.text + NSString(format: "%@ \n %@ \n %@ \n", postTitle, postDesc, postDate);
         });
+        self.tableView.reloadData()
+        
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath) as UITableViewCell
+        var post = self.posts.objectAtIndex(indexPath.row) as Post
+        cell.textLabel?.text = post.postTitle
+        cell.detailTextLabel?.text = post.postCont
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
     
