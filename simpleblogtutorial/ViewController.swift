@@ -52,7 +52,8 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        
         var post = self.posts.objectAtIndex(indexPath.row) as Post
         cell.textLabel?.text = post.postTitle
         cell.detailTextLabel?.text = post.postCont
