@@ -12,7 +12,7 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
 
     var learn : LearnNSURLSession = LearnNSURLSession()
     var posts : NSMutableArray = NSMutableArray()
-    
+    var selectedPost : Post?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -51,6 +51,11 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
         return posts.count;
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedPost = self.posts.objectAtIndex(indexPath.row) as Post
+        self.performSegueWithIdentifier("ViewPost", sender: self)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
@@ -75,6 +80,11 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
         {
             var addPost : AddPostVC = segue.destinationViewController as AddPostVC
             addPost.learn = self.learn
+        }
+        if segue.identifier == "ViewPost"
+        {
+            var viewPost : ViewPostVC = segue.destinationViewController as ViewPostVC
+            viewPost.post = selectedPost
         }
     }
     

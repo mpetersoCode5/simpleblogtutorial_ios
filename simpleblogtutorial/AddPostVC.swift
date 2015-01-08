@@ -11,7 +11,7 @@ import UIKit
 class AddPostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var descriptionView: UITextView!
+    @IBOutlet weak var descriptionView: UITextField!
     @IBOutlet weak var contentView: UITextView!
     
     var learn : LearnNSURLSession!
@@ -35,6 +35,7 @@ class AddPostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         titleField.resignFirstResponder()
+        descriptionView.resignFirstResponder()
         return true
     }
     
