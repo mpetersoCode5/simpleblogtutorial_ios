@@ -269,7 +269,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CGX-9t-79X" kind="show" id="3cH-op-7dp"/>
+                                    <segue destination="CGX-9t-79X" kind="show" identifier="editPost" id="3cH-op-7dp"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Post Content" translatesAutoresizingMaskIntoConstraints="NO" id="eho-pK-j2R">
@@ -338,6 +338,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StA-fI-UJH">
+                                <rect key="frame" x="269" y="550" width="63" height="30"/>
+                                <state key="normal" title="Edit Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editPostTapped:" destination="CGX-9t-79X" eventType="touchUpInside" id="zs2-lU-zDn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Content:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKi-fy-7X3">
+                                <rect key="frame" x="247" y="222" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwS-5I-5JR">
                                 <rect key="frame" x="16" y="251" width="568" height="291"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -347,18 +362,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StA-fI-UJH">
-                                <rect key="frame" x="269" y="550" width="63" height="30"/>
-                                <state key="normal" title="Edit Post">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Content:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKi-fy-7X3">
-                                <rect key="frame" x="247" y="222" width="106" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -380,6 +383,11 @@
                             <constraint firstItem="GPj-dt-PMU" firstAttribute="top" secondItem="0Ju-2u-EDe" secondAttribute="bottom" constant="22" id="xV9-w8-6cX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentTextArea" destination="vwS-5I-5JR" id="oc2-0d-Daz"/>
+                        <outlet property="descriptionField" destination="J6d-Ry-5zP" id="mqq-7P-KM4"/>
+                        <outlet property="titleField" destination="bLI-oC-B7s" id="lIG-2C-0pS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlo-l4-zzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

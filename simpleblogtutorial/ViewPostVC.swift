@@ -26,6 +26,13 @@ class ViewPostVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editPost"
+        {
+            var editPost : EditPostVC = segue.destinationViewController as EditPostVC
+            editPost.post = post
+        }
+    }
 
     /*
     // MARK: - Navigation

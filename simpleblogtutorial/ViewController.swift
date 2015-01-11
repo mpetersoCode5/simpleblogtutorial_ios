@@ -37,8 +37,10 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
             let postDesc = model["postDesc"] as NSString
             let postCont = model["postCont"] as NSString
             let postDate = model["postDate"] as NSString
+            let postID = model["postID"] as NSString
             
-            var post = Post(pTitle: postTitle, pDesc: postDesc, pCont: postCont, pDate: postDate)
+            let postIDInt = postID.integerValue as NSInteger
+            var post = Post(pID: postIDInt, pTitle: postTitle, pDesc: postDesc, pCont: postCont, pDate: postDate)
             self.posts.addObject(post)
             
 //            self.textView.text = self.textView.text + NSString(format: "%@ \n %@ \n %@ \n", postTitle, postDesc, postDate);

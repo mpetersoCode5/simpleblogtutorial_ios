@@ -99,6 +99,7 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
         task.resume()
     }
     
+    
     func tempFunc(data: NSData)
     {
         if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSArray
@@ -107,6 +108,7 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
         }
 
     }
+
     
     func login(result : NSString)
     {
@@ -126,6 +128,13 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
                 NSURLSessionAuthChallengeDisposition.UseCredential,
                 NSURLCredential(forTrust:
                     challenge.protectionSpace.serverTrust))
+    }
+    
+    func editPost(body : NSString)
+    {
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/edit-post.php")!)
+        httpPost(request, body: body)
+        
     }
     
     func setupPost(body : NSString)
