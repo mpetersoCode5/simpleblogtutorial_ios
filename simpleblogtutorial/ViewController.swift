@@ -87,6 +87,7 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
         {
             var viewPost : ViewPostVC = segue.destinationViewController as ViewPostVC
             viewPost.post = selectedPost
+            viewPost.learn = learn
         }
     }
     

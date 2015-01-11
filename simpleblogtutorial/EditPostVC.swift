@@ -8,18 +8,26 @@
 
 import UIKit
 
-class EditPostVC: UIViewController {
+protocol EditPostVCProtocol
+{
+    func setUpdatedPost(post : Post);
+}
+
+class EditPostVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var contentTextArea: UITextView!
     var post :Post?
+    var delegate : EditPostVCProtocol!
     
     var learn : LearnNSURLSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        titleField.delegate = self
+        descriptionField.delegate = self
+        contentTextArea.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +35,21 @@ class EditPostVC: UIViewController {
         titleField.text = post?.postTitle
         descriptionField.text = post?.postDesc
         contentTextArea.text = post?.postCont
+    }
+
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n")
+        {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        titleField.resignFirstResponder()
+        descriptionField.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,9 +61,9 @@ class EditPostVC: UIViewController {
         let id = self.post?.postID
         var postEdit = NSString(format: "postID=%d&postTitle=%@&postDesc=%@&postCont=%@", id!, titleField.text, descriptionField.text, contentTextArea.text)
         learn.editPost(postEdit)
-        titleField.text = ""
-        descriptionField.text = ""
-        contentTextArea.text = ""
+        let date = post?.postDate
+        var newPost = Post(pID: id!, pTitle: titleField.text, pDesc: descriptionField.text, pCont: contentTextArea.text, pDate: date!)
+        delegate.setUpdatedPost(newPost)
     }
 
     /*

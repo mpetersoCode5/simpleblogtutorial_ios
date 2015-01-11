@@ -8,19 +8,26 @@
 
 import UIKit
 
-class ViewPostVC: UIViewController {
+
+
+class ViewPostVC: UIViewController, EditPostVCProtocol {
 
     @IBOutlet weak var titleLabel: UILabel!    
     @IBOutlet weak var contentTextView: UITextView!
     var post : Post?
     
+    var learn : LearnNSURLSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+
+    override func viewWillAppear(animated: Bool) {
         titleLabel.text = post?.postTitle
         contentTextView.text = post?.postCont
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,9 +38,15 @@ class ViewPostVC: UIViewController {
         {
             var editPost : EditPostVC = segue.destinationViewController as EditPostVC
             editPost.post = post
+            editPost.delegate = self
+            editPost.learn = learn
         }
     }
 
+    func setUpdatedPost(post: Post) {
+        self.post = post
+    }
+    
     /*
     // MARK: - Navigation
 
