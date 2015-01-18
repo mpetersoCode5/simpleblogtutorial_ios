@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B465C3F41A59A426005EF1CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F31A59A426005EF1CB /* ViewController.swift */; };
 		B465C3F61A59A52F005EF1CB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F51A59A52F005EF1CB /* Post.swift */; };
+		B488D88F1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B488D88E1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib */; };
+		B488D8921A6B3AE500560FB8 /* blueRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B488D8911A6B3AE500560FB8 /* blueRectangle@2x.png */; };
+		B488D8941A6B3C5E00560FB8 /* BlogPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B488D8931A6B3C5E00560FB8 /* BlogPostTableViewCell.swift */; };
 		B4B04CAB1A54AEAE00DE079E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B04CAA1A54AEAE00DE079E /* AppDelegate.swift */; };
 		B4B04CAE1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4B04CAC1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld */; };
 		B4B04CB31A54AEAE00DE079E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B04CB11A54AEAE00DE079E /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		B465C3F31A59A426005EF1CB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B465C3F51A59A52F005EF1CB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B488D88E1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogPostTableViewCell.xib; sourceTree = "<group>"; };
+		B488D8911A6B3AE500560FB8 /* blueRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueRectangle@2x.png"; sourceTree = "<group>"; };
+		B488D8931A6B3C5E00560FB8 /* BlogPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogPostTableViewCell.swift; sourceTree = "<group>"; };
 		B4B04CA51A54AEAE00DE079E /* simpleblogtutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleblogtutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B04CA91A54AEAE00DE079E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4B04CAA1A54AEAE00DE079E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B488D88D1A6B3A2200560FB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B488D88E1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib */,
+				B488D8931A6B3C5E00560FB8 /* BlogPostTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B488D8901A6B3AD400560FB8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B488D8911A6B3AE500560FB8 /* blueRectangle@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		B4B04C9C1A54AEAE00DE079E = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +114,8 @@
 		B4B04CA71A54AEAE00DE079E /* simpleblogtutorial */ = {
 			isa = PBXGroup;
 			children = (
+				B488D8901A6B3AD400560FB8 /* Images */,
+				B488D88D1A6B3A2200560FB8 /* Views */,
 				B4C525411A58CABE00CA9820 /* View Controllers */,
 				B4B04D2C1A54B6AF00DE079E /* model */,
 				B4B04CAA1A54AEAE00DE079E /* AppDelegate.swift */,
@@ -232,7 +257,9 @@
 			files = (
 				B4B04CB31A54AEAE00DE079E /* Main.storyboard in Resources */,
 				B4B04CB81A54AEAE00DE079E /* LaunchScreen.xib in Resources */,
+				B488D8921A6B3AE500560FB8 /* blueRectangle@2x.png in Resources */,
 				B4B04CB51A54AEAE00DE079E /* Images.xcassets in Resources */,
+				B488D88F1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +284,7 @@
 				B4C525401A5840FE00CA9820 /* AddPostVC.swift in Sources */,
 				B4B04CAB1A54AEAE00DE079E /* AppDelegate.swift in Sources */,
 				B4B92FBA1A5E07DD00C1F5B5 /* ViewPostVC.swift in Sources */,
+				B488D8941A6B3C5E00560FB8 /* BlogPostTableViewCell.swift in Sources */,
 				B465C3F61A59A52F005EF1CB /* Post.swift in Sources */,
 				B4B04CAE1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld in Sources */,
 			);

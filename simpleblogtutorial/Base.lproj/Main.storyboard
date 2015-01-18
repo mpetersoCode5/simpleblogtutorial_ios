@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="478" id="0As-3r-6Rd"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="6vf-xo-hOd" detailTextLabel="aIZ-XH-ChF" style="IBUITableViewCellStyleSubtitle" id="iQL-Fr-s49">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="6vf-xo-hOd" detailTextLabel="aIZ-XH-ChF" style="IBUITableViewCellStyleSubtitle" id="iQL-Fr-s49" customClass="BlogPostTableViewCell" customModule="simpleblogtutorial" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iQL-Fr-s49" id="bxt-b1-X7P">

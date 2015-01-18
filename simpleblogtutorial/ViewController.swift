@@ -53,17 +53,49 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
         return posts.count;
     }
     
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 79
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedPost = self.posts.objectAtIndex(indexPath.row) as Post
         self.performSegueWithIdentifier("ViewPost", sender: self)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        tableView.registerNib(UINib(nibName: "BlogPostTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "cell")
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as BlogPostTableViewCell
         
         var post = self.posts.objectAtIndex(indexPath.row) as Post
-        cell.textLabel?.text = post.postTitle
-        cell.detailTextLabel?.text = post.postCont
+        
+//        cell.initialize()
+        
+        cell.titleLabel.text = post.postTitle
+        
+        
+        var titleSplit = post.postTitle?.componentsSeparatedByString(" ")
+        
+        let arr = titleSplit as NSArray?
+        
+        var charArr = NSMutableArray()
+        
+        for curWord in arr!
+        {
+            var upper = curWord.uppercaseString as NSString
+            var str = upper.substringToIndex(1)
+            charArr.addObject(str)
+        }
+        
+        var firstStr = charArr[0] as NSString
+        var secondStr = charArr[1] as NSString
+        
+        var fullStr = firstStr.stringByAppendingString(secondStr)
+        cell.IconLabel.text = fullStr
+        
+//        cell.textLabel?.text = post.postTitle
+//        cell.detailTextLabel?.text = post.postCont
         
         return cell
     }
