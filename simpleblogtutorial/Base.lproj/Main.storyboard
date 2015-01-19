@@ -122,10 +122,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="username_password_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="mqe-h4-4Gl">
                                 <rect key="frame" x="198" y="333" width="204" height="35"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="username_password_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="NY4-Iz-Faw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="username_password_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="NY4-Iz-Faw">
                                 <rect key="frame" x="198" y="389" width="204" height="35"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCi-2V-Y9H">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCi-2V-Y9H">
                                 <rect key="frame" x="198" y="336" width="204" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WDi-BF-57c"/>
@@ -177,7 +177,6 @@
                             <constraint firstItem="ymT-dW-VxG" firstAttribute="top" secondItem="mqe-h4-4Gl" secondAttribute="bottom" constant="24" id="bCf-56-mrh"/>
                             <constraint firstItem="7tB-Bi-hD1" firstAttribute="centerX" secondItem="mqe-h4-4Gl" secondAttribute="centerX" id="hlQ-bX-guj"/>
                             <constraint firstItem="2fz-Fc-kYY" firstAttribute="top" secondItem="NY4-Iz-Faw" secondAttribute="bottom" constant="32" id="m0i-w3-NYc"/>
-                            <constraint firstAttribute="bottom" secondItem="mCi-2V-Y9H" secondAttribute="bottom" constant="234" id="rja-VM-VgS"/>
                             <constraint firstItem="mCi-2V-Y9H" firstAttribute="leading" secondItem="mqe-h4-4Gl" secondAttribute="leading" id="tX4-vC-RbR"/>
                             <constraint firstItem="2fz-Fc-kYY" firstAttribute="top" secondItem="ymT-dW-VxG" secondAttribute="bottom" constant="34" id="uw8-VS-V5A"/>
                             <constraint firstItem="Ki7-AH-PJx" firstAttribute="top" secondItem="2fz-Fc-kYY" secondAttribute="bottom" constant="109" id="w7t-eS-goN"/>
@@ -192,8 +191,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="9kZ-cE-R6o"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="w7t-eS-goN" id="YYX-us-kFc"/>
                         <outlet property="passwordField" destination="ymT-dW-VxG" id="Nx0-8p-Ukp"/>
+                        <outlet property="passwordImageView" destination="NY4-Iz-Faw" id="hGy-aL-nG8"/>
+                        <outlet property="signinButton" destination="2fz-Fc-kYY" id="gwL-Xc-QKj"/>
                         <outlet property="usernameField" destination="mCi-2V-Y9H" id="CMB-eJ-gKT"/>
+                        <outlet property="usernameImageView" destination="mqe-h4-4Gl" id="Gpu-OZ-z3z"/>
                         <segue destination="SON-to-DMQ" kind="show" identifier="login" id="SSe-6q-hBH"/>
                     </connections>
                 </viewController>

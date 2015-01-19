@@ -14,7 +14,14 @@ class LoginVC: UIViewController, simpleblogLoginAPIProtocol, UITextFieldDelegate
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameImageView: UIImageView!
+    @IBOutlet weak var passwordImageView: UIImageView!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    var bottom : CGFloat = 0
+    
+    @IBOutlet weak var signinButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +29,9 @@ class LoginVC: UIViewController, simpleblogLoginAPIProtocol, UITextFieldDelegate
         learn.lDelegate = self
         usernameField.delegate = self
         passwordField.delegate = self
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        bottom = self.bottomConstraint.constant
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +43,25 @@ class LoginVC: UIViewController, simpleblogLoginAPIProtocol, UITextFieldDelegate
     {
         self.performSegueWithIdentifier("login", sender: self)
     }
-
+    
+    func keyboardWasShown(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.bottomConstraint.constant = keyboardFrame.size.height + 20
+        })
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.bottomConstraint.constant = self.bottom
+        })
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         usernameField.resignFirstResponder()
         passwordField.resignFirstResponder()
