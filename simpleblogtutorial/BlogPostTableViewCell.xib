@@ -15,8 +15,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueRectangle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-Rb-GrR">
                         <rect key="frame" x="17" y="12" width="55" height="55"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xko-nU-FY3">
-                        <rect key="frame" x="32" y="29" width="26" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xko-nU-FY3">
+                        <rect key="frame" x="17" y="12" width="55" height="55"/>
                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                 <outlet property="IconLabel" destination="Xko-nU-FY3" id="Oei-vs-Z2s"/>
                 <outlet property="titleLabel" destination="Bya-gx-6s4" id="qPC-wC-go1"/>
             </connections>
-            <point key="canvasLocation" x="711" y="339.5"/>
+            <point key="canvasLocation" x="711" y="336.5"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44111941A6CC27F00B13F53 /* greenRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44111931A6CC27F00B13F53 /* greenRectangle@2x.png */; };
+		B44111961A6CC71E00B13F53 /* redRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44111951A6CC71E00B13F53 /* redRectangle@2x.png */; };
 		B465C3F41A59A426005EF1CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F31A59A426005EF1CB /* ViewController.swift */; };
 		B465C3F61A59A52F005EF1CB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F51A59A52F005EF1CB /* Post.swift */; };
 		B488D88F1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B488D88E1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B44111931A6CC27F00B13F53 /* greenRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "greenRectangle@2x.png"; path = "design/greenRectangle@2x.png"; sourceTree = SOURCE_ROOT; };
+		B44111951A6CC71E00B13F53 /* redRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "redRectangle@2x.png"; path = "design/redRectangle@2x.png"; sourceTree = SOURCE_ROOT; };
 		B465C3F31A59A426005EF1CB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B465C3F51A59A52F005EF1CB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B488D88E1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogPostTableViewCell.xib; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		B488D8901A6B3AD400560FB8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B44111951A6CC71E00B13F53 /* redRectangle@2x.png */,
+				B44111931A6CC27F00B13F53 /* greenRectangle@2x.png */,
 				B488D8911A6B3AE500560FB8 /* blueRectangle@2x.png */,
 			);
 			name = Images;
@@ -255,9 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44111941A6CC27F00B13F53 /* greenRectangle@2x.png in Resources */,
 				B4B04CB31A54AEAE00DE079E /* Main.storyboard in Resources */,
 				B4B04CB81A54AEAE00DE079E /* LaunchScreen.xib in Resources */,
 				B488D8921A6B3AE500560FB8 /* blueRectangle@2x.png in Resources */,
+				B44111961A6CC71E00B13F53 /* redRectangle@2x.png in Resources */,
 				B4B04CB51A54AEAE00DE079E /* Images.xcassets in Resources */,
 				B488D88F1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib in Resources */,
 			);

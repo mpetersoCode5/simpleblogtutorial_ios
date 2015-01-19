@@ -132,27 +132,31 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
     
     func editPost(body : NSString)
     {
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/edit-post.php")!)
+//        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/edit-post.php")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.1.13/simpleblog/ios_backend/edit-post.php")!)
         httpPost(request, body: body)
         
     }
     
     func setupPost(body : NSString)
     {
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/add-post.php")!)
+//        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/add-post.php")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.1.13/simpleblog/ios_backend/add-post.php")!)
         httpPost(request, body : body)
     }
     
     func setupLogin(username: NSString, password: NSString)
     {
-        var url : NSString = NSString(format: "http://michaelserver.local:86/ios_backend/Login.php?username=%@&password=%@", username, password)
+//        var url : NSString = NSString(format: "http://michaelserver.local:86/ios_backend/Login.php?username=%@&password=%@", username, password)
+        var url : NSString = NSString(format: "http://192.168.1.13/simpleblog/ios_backend/Login.php?username=%@&password=%@", username, password)
         var request = NSMutableURLRequest(URL: NSURL(string:url)!)
         httpLogin(request)
     }
     
     func setupConnection()
     {
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/index.php")!)
+//        var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/index.php")!)
+         var request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.1.13/simpleblog/ios_backend/index.php")!)
         httpGet(request)
     }
     

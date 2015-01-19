@@ -13,6 +13,8 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
     var learn : LearnNSURLSession = LearnNSURLSession()
     var posts : NSMutableArray = NSMutableArray()
     var selectedPost : Post?
+    var colorCount : NSInteger = 0
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +27,7 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
     }
 
     override func viewWillAppear(animated: Bool) {
+        colorCount = 0
         learn.setupConnection()
     }
     
@@ -73,6 +76,25 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
 //        cell.initialize()
         
         cell.titleLabel.text = post.postTitle
+        
+        switch(colorCount)
+        {
+        case 0:
+            colorCount++
+            break
+        case 1:
+            cell.IconImage.image = UIImage(named: "greenRectangle.png")
+            cell.titleLabel.textColor = UIColor(red: (76.0/255.0), green: (175.0/255.0), blue: (80.0/255.0), alpha: 1.0)
+            colorCount++
+            break;
+        case 2:
+            cell.IconImage.image = UIImage(named: "redRectangle.png")
+            cell.titleLabel.textColor = UIColor(red: (244.0/255.0), green: (67.0/255.0), blue: (54.0/255.0), alpha: 1.0)
+            colorCount = 0
+            break;
+        default:
+            break
+        }
         
         
         var titleSplit = post.postTitle?.componentsSeparatedByString(" ")
