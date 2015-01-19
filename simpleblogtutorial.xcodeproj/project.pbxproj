@@ -25,6 +25,11 @@
 		B4C36A541A58CE4A00590AD4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C36A531A58CE4A00590AD4 /* LoginVC.swift */; };
 		B4C5253E1A575E1400CA9820 /* LearnNSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5253D1A575E1400CA9820 /* LearnNSURLSession.swift */; };
 		B4C525401A5840FE00CA9820 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5253F1A5840FE00CA9820 /* AddPostVC.swift */; };
+		B4DE428D1A6D523300EE689A /* yellowRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4DE428C1A6D523300EE689A /* yellowRectangle@2x.png */; };
+		B4DE428F1A6D53FE00EE689A /* orangeRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4DE428E1A6D53FE00EE689A /* orangeRectangle@2x.png */; };
+		B4DE42931A6D678D00EE689A /* loginBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4DE42921A6D678D00EE689A /* loginBackground@2x.png */; };
+		B4DE42961A6D686800EE689A /* signinButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4DE42941A6D686800EE689A /* signinButton@2x.png */; };
+		B4DE42971A6D686800EE689A /* username_password_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4DE42951A6D686800EE689A /* username_password_background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		B4C36A531A58CE4A00590AD4 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B4C5253D1A575E1400CA9820 /* LearnNSURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnNSURLSession.swift; sourceTree = "<group>"; };
 		B4C5253F1A5840FE00CA9820 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		B4DE428C1A6D523300EE689A /* yellowRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellowRectangle@2x.png"; sourceTree = "<group>"; };
+		B4DE428E1A6D53FE00EE689A /* orangeRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeRectangle@2x.png"; sourceTree = "<group>"; };
+		B4DE42921A6D678D00EE689A /* loginBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginBackground@2x.png"; sourceTree = "<group>"; };
+		B4DE42941A6D686800EE689A /* signinButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signinButton@2x.png"; sourceTree = "<group>"; };
+		B4DE42951A6D686800EE689A /* username_password_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "username_password_background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +102,11 @@
 		B488D8901A6B3AD400560FB8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B4DE42941A6D686800EE689A /* signinButton@2x.png */,
+				B4DE42951A6D686800EE689A /* username_password_background@2x.png */,
+				B4DE42921A6D678D00EE689A /* loginBackground@2x.png */,
+				B4DE428E1A6D53FE00EE689A /* orangeRectangle@2x.png */,
+				B4DE428C1A6D523300EE689A /* yellowRectangle@2x.png */,
 				B44111951A6CC71E00B13F53 /* redRectangle@2x.png */,
 				B44111931A6CC27F00B13F53 /* greenRectangle@2x.png */,
 				B488D8911A6B3AE500560FB8 /* blueRectangle@2x.png */,
@@ -265,7 +280,12 @@
 				B4B04CB31A54AEAE00DE079E /* Main.storyboard in Resources */,
 				B4B04CB81A54AEAE00DE079E /* LaunchScreen.xib in Resources */,
 				B488D8921A6B3AE500560FB8 /* blueRectangle@2x.png in Resources */,
+				B4DE428D1A6D523300EE689A /* yellowRectangle@2x.png in Resources */,
+				B4DE42931A6D678D00EE689A /* loginBackground@2x.png in Resources */,
+				B4DE42961A6D686800EE689A /* signinButton@2x.png in Resources */,
+				B4DE428F1A6D53FE00EE689A /* orangeRectangle@2x.png in Resources */,
 				B44111961A6CC71E00B13F53 /* redRectangle@2x.png in Resources */,
+				B4DE42971A6D686800EE689A /* username_password_background@2x.png in Resources */,
 				B4B04CB51A54AEAE00DE079E /* Images.xcassets in Resources */,
 				B488D88F1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib in Resources */,
 			);

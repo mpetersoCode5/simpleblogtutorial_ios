@@ -90,6 +90,16 @@ class ViewController: UIViewController, simpleblogAPIProtocol, UITableViewDataSo
         case 2:
             cell.IconImage.image = UIImage(named: "redRectangle.png")
             cell.titleLabel.textColor = UIColor(red: (244.0/255.0), green: (67.0/255.0), blue: (54.0/255.0), alpha: 1.0)
+            colorCount++
+            break;
+        case 3:
+            cell.IconImage.image = UIImage(named: "yellowRectangle.png")
+            cell.titleLabel.textColor = UIColor(red: (255.0/255.0), green: (235.0/255.0), blue: (59.0/255.0), alpha: 1.0)
+            colorCount++
+            break;
+        case 4:
+            cell.IconImage.image = UIImage(named: "orangeRectangle.png")
+            cell.titleLabel.textColor = UIColor(red: (255.0/255.0), green: (87.0/255.0), blue: (34.0/255.0), alpha: 1.0)
             colorCount = 0
             break;
         default:

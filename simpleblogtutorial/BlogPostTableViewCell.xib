@@ -21,8 +21,8 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Initial Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bya-gx-6s4">
-                        <rect key="frame" x="80" y="29" width="201" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Initial Post" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bya-gx-6s4">
+                        <rect key="frame" x="102" y="14" width="179" height="55"/>
                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="22"/>
                         <color key="textColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                 <outlet property="IconLabel" destination="Xko-nU-FY3" id="Oei-vs-Z2s"/>
                 <outlet property="titleLabel" destination="Bya-gx-6s4" id="qPC-wC-go1"/>
             </connections>
-            <point key="canvasLocation" x="711" y="336.5"/>
+            <point key="canvasLocation" x="711" y="333.5"/>
         </tableViewCell>
     </objects>
     <resources>
