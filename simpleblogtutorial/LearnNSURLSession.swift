@@ -16,10 +16,15 @@ protocol simpleblogLoginAPIProtocol {
     func didReceiveLoginResponse(result : NSString);
 }
 
+protocol simpleblogSignupAPIProtocol {
+    func didReceiveSignupResponse(result : NSString);
+}
+
 class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegate {
     
     var delegate : simpleblogAPIProtocol!
     var lDelegate : simpleblogLoginAPIProtocol!
+    var sDelegate : simpleblogSignupAPIProtocol!
     var str : NSData!
     
 //    typealias CallbackBlock = (result: String, error: String?) -> ()
@@ -99,6 +104,29 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
         task.resume()
     }
     
+    func httpSignUp(request:NSMutableURLRequest!, body: NSString)
+    {
+        var configuration =
+        NSURLSessionConfiguration.defaultSessionConfiguration()
+        var session = NSURLSession(configuration: configuration,
+            delegate: self,
+            delegateQueue:NSOperationQueue.mainQueue())
+        
+        request.HTTPMethod = "POST"
+        var trueBody = body.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        
+        request.HTTPBody = trueBody.dataUsingEncoding(NSUTF8StringEncoding)
+        var task = session.dataTaskWithRequest(request){
+            (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                var result = NSString(data: data, encoding:NSASCIIStringEncoding)!
+                self.signup(result)
+            }
+        }
+        task.resume()
+    }
     
     func tempFunc(data: NSData)
     {
@@ -115,6 +143,14 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
         if(result == "Success")
         {
             self.lDelegate?.didReceiveLoginResponse(result)
+        }
+    }
+    
+    func signup(result : NSString)
+    {
+        if(result == "Success")
+        {
+            self.sDelegate?.didReceiveSignupResponse(result)
         }
     }
     
@@ -158,6 +194,13 @@ class LearnNSURLSession: NSObject, NSURLSessionDelegate, NSURLSessionTaskDelegat
         var request = NSMutableURLRequest(URL: NSURL(string: "http://michaelserver.local:86/ios_backend/index.php")!)
 //         var request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.1.13/simpleblog/ios_backend/index.php")!)
         httpGet(request)
+    }
+    
+    func setupSignup(body : NSString)
+    {
+        var url : NSString = NSString(format: "http://michaelserver.local:86/ios_backend/Add-User.php")
+        var request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        httpSignUp(request, body: body)
     }
     
     func getResultString() -> NSData
