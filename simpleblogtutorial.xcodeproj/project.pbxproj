@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B44111941A6CC27F00B13F53 /* greenRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44111931A6CC27F00B13F53 /* greenRectangle@2x.png */; };
 		B44111961A6CC71E00B13F53 /* redRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44111951A6CC71E00B13F53 /* redRectangle@2x.png */; };
+		B446ED911A74502A006ACCD2 /* signupButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B446ED901A745029006ACCD2 /* signupButton@2x.png */; };
+		B446ED931A745174006ACCD2 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B446ED921A745174006ACCD2 /* SignupVC.swift */; };
 		B465C3F41A59A426005EF1CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F31A59A426005EF1CB /* ViewController.swift */; };
 		B465C3F61A59A52F005EF1CB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465C3F51A59A52F005EF1CB /* Post.swift */; };
 		B488D88F1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B488D88E1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		B44111931A6CC27F00B13F53 /* greenRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "greenRectangle@2x.png"; path = "design/greenRectangle@2x.png"; sourceTree = SOURCE_ROOT; };
 		B44111951A6CC71E00B13F53 /* redRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "redRectangle@2x.png"; path = "design/redRectangle@2x.png"; sourceTree = SOURCE_ROOT; };
+		B446ED901A745029006ACCD2 /* signupButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signupButton@2x.png"; sourceTree = "<group>"; };
+		B446ED921A745174006ACCD2 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		B465C3F31A59A426005EF1CB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B465C3F51A59A52F005EF1CB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B488D88E1A6B3A3F00560FB8 /* BlogPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogPostTableViewCell.xib; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		B488D8901A6B3AD400560FB8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B446ED901A745029006ACCD2 /* signupButton@2x.png */,
 				B4DE42941A6D686800EE689A /* signinButton@2x.png */,
 				B4DE42951A6D686800EE689A /* username_password_background@2x.png */,
 				B4DE42921A6D678D00EE689A /* loginBackground@2x.png */,
@@ -191,6 +196,7 @@
 				B4C5253F1A5840FE00CA9820 /* AddPostVC.swift */,
 				B4B92FB91A5E07DD00C1F5B5 /* ViewPostVC.swift */,
 				B4B92FBB1A5E0B8000C1F5B5 /* EditPostVC.swift */,
+				B446ED921A745174006ACCD2 /* SignupVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B446ED911A74502A006ACCD2 /* signupButton@2x.png in Resources */,
 				B44111941A6CC27F00B13F53 /* greenRectangle@2x.png in Resources */,
 				B4B04CB31A54AEAE00DE079E /* Main.storyboard in Resources */,
 				B4B04CB81A54AEAE00DE079E /* LaunchScreen.xib in Resources */,
@@ -314,6 +321,7 @@
 				B4B92FBA1A5E07DD00C1F5B5 /* ViewPostVC.swift in Sources */,
 				B488D8941A6B3C5E00560FB8 /* BlogPostTableViewCell.swift in Sources */,
 				B465C3F61A59A52F005EF1CB /* Post.swift in Sources */,
+				B446ED931A745174006ACCD2 /* SignupVC.swift in Sources */,
 				B4B04CAE1A54AEAE00DE079E /* simpleblogtutorial.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

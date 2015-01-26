@@ -72,6 +72,14 @@ class LoginVC: UIViewController, simpleblogLoginAPIProtocol, UITextFieldDelegate
         learn.setupLogin(usernameField.text, password: passwordField.text)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.description == "Signup"
+        {
+            var destination : SignupVC = segue.destinationViewController as SignupVC
+            destination.learn = self.learn
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
